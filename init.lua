@@ -692,7 +692,11 @@ do
   --  See `:help lsp-config` for information about keys and how to configure
   ---@type table<string, vim.lsp.Config>
   local servers = {
-    clangd = {},
+    clangd = {
+      init_options = {
+        fallbackFlags = { '--std=c++23' },
+      },
+    },
     -- gopls = {},
     -- pyright = {},
     -- rust_analyzer = {},
